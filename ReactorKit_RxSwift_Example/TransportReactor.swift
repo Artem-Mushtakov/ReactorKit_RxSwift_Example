@@ -47,7 +47,7 @@ final class TransportReactor: Reactor {
             return Observable.concat([
                 Observable.just(Mutation.setLoading(true)),
                 Observable.just(Mutation.tapCar)
-                    .delay(.seconds(3), scheduler: MainScheduler.instance),
+                    .delay(.seconds(1), scheduler: MainScheduler.instance),
                 Observable.just(Mutation.setLoading(false)),
 
             ])
@@ -55,14 +55,14 @@ final class TransportReactor: Reactor {
             return Observable.concat([
                 Observable.just(Mutation.setLoading(true)),
                 Observable.just(Mutation.tapPlane)
-                    .delay(.seconds(3), scheduler: MainScheduler.instance),
+                    .delay(.seconds(1), scheduler: MainScheduler.instance),
                 Observable.just(Mutation.setLoading(false)),
             ])
         case .ship:
             return Observable.concat([
                 Observable.just(Mutation.setLoading(true)),
             Observable.just(Mutation.tapShip)
-                    .delay(.seconds(3), scheduler: MainScheduler.instance),
+                    .delay(.seconds(1), scheduler: MainScheduler.instance),
                 Observable.just(Mutation.setLoading(false)),
             ])
         }
