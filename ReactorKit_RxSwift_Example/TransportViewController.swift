@@ -87,7 +87,7 @@ class TransportViewController: UIViewController {
 
 
         planeButton.rx.tap
-            .map{ TransportReactor.Action.plahe }
+            .map{ TransportReactor.Action.plane }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
 
@@ -112,6 +112,5 @@ class TransportViewController: UIViewController {
             }
         })
         .disposed(by: disposeBag)
-
     }
 }

@@ -11,9 +11,10 @@ import RxSwift
 final class TransportReactor: Reactor {
     
     // Действие
+    
     enum Action {
         case car
-        case plahe
+        case plane
         case ship
     }
 
@@ -26,6 +27,7 @@ final class TransportReactor: Reactor {
     }
 
    // Состояние
+
     struct State {
         var textTransport: String
         var isLoading: Bool
@@ -41,6 +43,7 @@ final class TransportReactor: Reactor {
     }
 
     // Action -> Mutation  Обработка действий
+
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .car:
@@ -51,7 +54,7 @@ final class TransportReactor: Reactor {
                 Observable.just(Mutation.setLoading(false)),
 
             ])
-        case .plahe:
+        case .plane:
             return Observable.concat([
                 Observable.just(Mutation.setLoading(true)),
                 Observable.just(Mutation.tapPlane)
@@ -69,6 +72,7 @@ final class TransportReactor: Reactor {
     }
 
     // Mutation -> State
+
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
