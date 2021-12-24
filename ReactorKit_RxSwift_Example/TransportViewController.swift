@@ -1,16 +1,18 @@
 //
-//  ViewController.swift
+//  TransportViewController.swift
 //  ReactorKit_RxSwift_Example
 //
 //  Created by Артем on 24.12.2021.
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import ReactorKit
 
+class TransportViewController: UIViewController {
 
-class ViewController: UIViewController {
-
-    // MARK: - Propirties
+    // MARK: - Properties
 
     private lazy var carButton: UIButton = {
         let carButton = UIButton(type: UIButton.ButtonType.system)
@@ -53,6 +55,8 @@ class ViewController: UIViewController {
 
         configureUI()
         setupLayout()
+
+        bind(reactor: reactorTransport)
     }
 
     // MARK: - Configures
@@ -70,6 +74,44 @@ class ViewController: UIViewController {
         stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
+    var disposeBag = DisposeBag()
 
+    let reactorTransport = TransportReactor()
+
+    func bind(reactor: TransportReactor) {
+
+        carButton.rx.tap
+            .map{ TransportReactor.Action.car }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+
+
+        planeButton.rx.tap
+            .map{ TransportReactor.Action.plahe }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+
+        shipButton.rx.tap
+            .map{ TransportReactor.Action.ship }
+            .bind(to: reactor.action)
+            .disposed(by: disposeBag)
+
+        reactor.state.map { $0.textTransport }
+        .distinctUntilChanged()
+        .map { $0 }
+        .subscribe(onNext: { text in
+            self.selectedLabel.text = text
+        })
+        .disposed(by: disposeBag)
+
+        reactor.state.map { $0.isLoading }
+        .distinctUntilChanged()
+        .subscribe(onNext: { text in
+            if text == true{
+                self.selectedLabel.text = "Включена задержка"
+            }
+        })
+        .disposed(by: disposeBag)
+
+    }
 }
-

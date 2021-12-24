@@ -10,8 +10,9 @@
 		36B1BA4665D91EB47EA588D3 /* Pods_ReactorKit_RxSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE77C8407388222FCBBC17B /* Pods_ReactorKit_RxSwift_Example.framework */; };
 		AC6A66EE27761DBC0047413C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A66ED27761DBC0047413C /* AppDelegate.swift */; };
 		AC6A66F027761DBC0047413C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A66EF27761DBC0047413C /* SceneDelegate.swift */; };
-		AC6A66F227761DBC0047413C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A66F127761DBC0047413C /* ViewController.swift */; };
+		AC6A66F227761DBC0047413C /* TransportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A66F127761DBC0047413C /* TransportViewController.swift */; };
 		AC6A66F727761DBE0047413C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC6A66F627761DBE0047413C /* Assets.xcassets */; };
+		AC6A670227762BB70047413C /* TransportReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6A670127762BB70047413C /* TransportReactor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,9 +21,10 @@
 		AC6A66EA27761DBC0047413C /* ReactorKit_RxSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactorKit_RxSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6A66ED27761DBC0047413C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC6A66EF27761DBC0047413C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AC6A66F127761DBC0047413C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AC6A66F127761DBC0047413C /* TransportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportViewController.swift; sourceTree = "<group>"; };
 		AC6A66F627761DBE0047413C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC6A66FB27761DBE0047413C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC6A670127762BB70047413C /* TransportReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportReactor.swift; sourceTree = "<group>"; };
 		CC12CA738362D91B94F32710 /* Pods-ReactorKit_RxSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactorKit_RxSwift_Example.release.xcconfig"; path = "Target Support Files/Pods-ReactorKit_RxSwift_Example/Pods-ReactorKit_RxSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,9 +63,10 @@
 			children = (
 				AC6A66ED27761DBC0047413C /* AppDelegate.swift */,
 				AC6A66EF27761DBC0047413C /* SceneDelegate.swift */,
-				AC6A66F127761DBC0047413C /* ViewController.swift */,
-				AC6A66F627761DBE0047413C /* Assets.xcassets */,
+				AC6A66F127761DBC0047413C /* TransportViewController.swift */,
+				AC6A670127762BB70047413C /* TransportReactor.swift */,
 				AC6A66FB27761DBE0047413C /* Info.plist */,
+				AC6A66F627761DBE0047413C /* Assets.xcassets */,
 			);
 			path = ReactorKit_RxSwift_Example;
 			sourceTree = "<group>";
@@ -74,7 +77,6 @@
 				0A73382BBA2AE57456DC7692 /* Pods-ReactorKit_RxSwift_Example.debug.xcconfig */,
 				CC12CA738362D91B94F32710 /* Pods-ReactorKit_RxSwift_Example.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -199,7 +201,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC6A66F227761DBC0047413C /* ViewController.swift in Sources */,
+				AC6A670227762BB70047413C /* TransportReactor.swift in Sources */,
+				AC6A66F227761DBC0047413C /* TransportViewController.swift in Sources */,
 				AC6A66EE27761DBC0047413C /* AppDelegate.swift in Sources */,
 				AC6A66F027761DBC0047413C /* SceneDelegate.swift in Sources */,
 			);
